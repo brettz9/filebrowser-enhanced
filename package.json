@@ -1,0 +1,1 @@
+{"license": "MIT", "description": "Overlays Firefox&#39;s file built-in browser with additional functionality", "contributors": [], "author": "brettz9", "url": "", "dependencies": ["api-utils", "addon-kit"], "version": "0.1.0", "lib": "lib", "fullName": "filebrowser-enhanced", "main": "main", "id": "jid0-eM18CfXeYaui2LfzOiTY9Rtdxs8", "name": "filebrowser-enhanced"}
