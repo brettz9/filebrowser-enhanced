@@ -1,11 +1,8 @@
 /*globals self, jml*/
 (function () {'use strict';
 
-// alert(document.querySelectorAll('a.file').length);
-// document.body.innerHTML = 'Haha, it\'s working!';
 // self.port.emit(name, jsonSerializableData);
 // self.port.on/once/removeListener(name, function () {}); // self.on is used instead for built-in message listening
-//});
 
 var on, emit, options;
 if (window.location.href.indexOf('.') === -1) { // In a directory (regex should remove need for this once working)
