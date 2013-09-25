@@ -8,7 +8,7 @@ Currently is limited to:
 1. Rather than needing to copy or change the file path within the browser's location bar, one may also copy-paste or change the native path within the page-internal textbox (which is capable of path autocomplete).
 1. Adds a folder icon which can be clicked to reveal the current directory on the native OS desktop (e.g., open the currently browsed directory within Windows Explorer). A folder icon with the same functionality is also present on the add-on bar when browsing to a file: URL (e.g., when viewing a .txt file in Firefox), allowing one to jump to the containing folder on one's desktop.
 
-# Possible Todos:
+# Possible Todos
 
 1. Integrate or replace built-in desktop browser in a better way: Utilize info at http://stackoverflow.com/questions/18312461/code-responsible-for-browsing-firefoxs-desktop  - also posted at http://forums.mozillazine.org/viewtopic.php?f=19&t=2740643 ? ;
 1. Incorporate [WebAppFind](https://github.com/brettz9/webappfind) functionality upon right-click.
