@@ -28,3 +28,4 @@ Possible Todos:
 1. Add file search (through js-ctypes?)
 1. Ensure reading files in file browser with new Node-friendly API so can also reuse code on server or even for HTML Ajax browsing of file sources?)
 1. Re: feature for addon bar icon revealing path of a loaded file, have options to map websites this way also, esp. 127.0.0.1/localhost ; have option to automatically handle click-to-expose-path if loaded through webappfind (since we know where the path originated)
+1. Ability to handle multiple files on right-click (unlike what seems readily possibly in Windows through Open With... mechanism)
