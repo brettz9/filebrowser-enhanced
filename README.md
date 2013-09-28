@@ -19,7 +19,7 @@ Currently is limited to:
     1. Add right-click features, working with WebAppFind where possible for greater type-aware possibilities (e.g., when creating a file, one could create a bare file of the desired type)
         1. Allow opening of file (rather than FF's download), alias?, or directory;
         1. Allow creation of file, directory or alias (to file or directory) or zip
-        1. Allow renaming of a file, directory or alias
+        1. Allow renaming (or moving) of a file, directory or alias
         1. Allow deleting of a file, directory or alias
         1. Ideally allow copy or cut-and-paste of files/directories (and drag-and-drop for relevant viewing modes)
         1. Support open Git GUI/bash/create repo here, edit in Notepad++, etc., open with, send to, properties, folder permissions
