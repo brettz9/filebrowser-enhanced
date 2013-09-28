@@ -11,18 +11,20 @@ Currently is limited to:
 # Possible Todos
 
 1. Integrate or replace built-in desktop browser in a better way: Utilize info at http://stackoverflow.com/questions/18312461/code-responsible-for-browsing-firefoxs-desktop  - also posted at http://forums.mozillazine.org/viewtopic.php?f=19&t=2740643 ? ;
-1. Incorporate [WebAppFind](https://github.com/brettz9/webappfind) functionality upon right-click.
 1. Allow (power) sticky notes to be associated (as hidden files within the directory) to be displayed as an overlay when browsing files (as with a browser add-on and hopefully for a browser-in-browser); some stickies can be file-specific meta-data or folder-specific; scrollable all as one file or as stickies, whether local or remote (see below)
 1. Links leading from file:// folders to other data sources like bookmarks, tab groups, remote databases, etc., even if not stored as files on disk (WebDav, Gopher, FTP, etc.? and including browsing through service discovery for files filtered to desired types), thereby allowing sticky notes associated with them; one doesn't HAVE to store the stickies within the same folder (or even a real folder at all), but it makes it easier to discover them in different ways--unless not possible (as with WebDav not under one's control, etc.); however, should allow storing of stickies in abstract way so get saved at same level of database, etc., if database allows this
 1. Integrate with "Desktop" FF addon if his were to use iframes
-1. Add right-click features, working with WebAppFind where possible for greater type-aware possibilities (e.g., when creating a file, one could create a bare file of the desired type)
-    1. Allow opening of file (rather than FF's download), alias?, or directory;
-    1. Allow creation of file, directory or alias (to file or directory) or zip
-    1. Allow renaming of a file, directory or alias
-    1. Allow deleting of a file, directory or alias
-    1. Ideally allow copy or cut-and-paste of files/directories (and drag-and-drop for relevant viewing modes)
-    1. Support open Git GUI/bash/create repo here, edit in Notepad++, etc., open with, send to, properties, folder permissions
-1. Allow additional options for opening or editing file in web app (e.g., saving hard-coded web apps for a given file), working with [WebAppFind](https://github.com/brettz9/webappfind) and [ExecuteBuilder](https://builder.addons.mozilla.org/package/204099/latest/) (once the latter is complete)
+1. WebAppFind
+    1. Incorporate [WebAppFind](https://github.com/brettz9/webappfind) functionality upon right-click.
+    1. Add right-click features, working with WebAppFind where possible for greater type-aware possibilities (e.g., when creating a file, one could create a bare file of the desired type)
+        1. Allow opening of file (rather than FF's download), alias?, or directory;
+        1. Allow creation of file, directory or alias (to file or directory) or zip
+        1. Allow renaming of a file, directory or alias
+        1. Allow deleting of a file, directory or alias
+        1. Ideally allow copy or cut-and-paste of files/directories (and drag-and-drop for relevant viewing modes)
+        1. Support open Git GUI/bash/create repo here, edit in Notepad++, etc., open with, send to, properties, folder permissions
+    1. Allow additional options for opening or editing file in web app (e.g., saving hard-coded web apps for a given file), working with [WebAppFind](https://github.com/brettz9/webappfind) and [ExecuteBuilder](https://builder.addons.mozilla.org/package/204099/latest/) (once the latter is complete)
+    1. Consider launching [AsYouWish](https://github.com/brettz9/asyouwish/) apps for integrated command-line or add-on-like behavior (including via file-path-aware right-click).
 1. Display file/folder icons
 1. Add meta-data columns (at least "permissions" appears available)
 1. Add file search (through js-ctypes?)
