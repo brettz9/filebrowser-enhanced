@@ -25,9 +25,10 @@ Currently is limited to:
         1. Support open Git GUI/bash/create repo here, edit in Notepad++, etc., open with, send to, properties, folder permissions
     1. Allow additional options for opening or editing file in web app (e.g., saving hard-coded web apps for a given file), working with [WebAppFind](https://github.com/brettz9/webappfind) and [ExecuteBuilder](https://builder.addons.mozilla.org/package/204099/latest/) (once the latter is complete)
     1. Consider launching [AsYouWish](https://github.com/brettz9/asyouwish/) apps for integrated command-line or add-on-like behavior (including via file-path-aware right-click).
+    1. When user default handlers or right-clicking to "Open with...", Filebrowser Enhanced could be more sophisticated than the file extension-using WebAppFind desktop executables in that it could avoid applying defaults or showing "Open with..." options if the particular detected file type was not relevant (e.g., don't show "edit mytype").
 1. Display file/folder icons
 1. Add meta-data columns (at least "permissions" appears available)
 1. Add file search (through js-ctypes?)
 1. Ensure reading files in file browser with new Node-friendly API so can also reuse code on server or even for HTML Ajax browsing of file sources?)
-1. Re: feature for addon bar icon revealing path of a loaded file, have options to map websites this way also, esp. 127.0.0.1/localhost ; have option to automatically handle click-to-expose-path if loaded through webappfind (since we know where the path originated)
+1. Re: feature for addon bar icon revealing path of a loaded file, have options to map websites this way also, esp. 127.0.0.1/localhost ; have option to automatically handle click-to-expose-path if loaded through WebAppFind (since we know where the path originated)
 1. Ability to handle multiple files on right-click (unlike what seems readily possibly in Windows through Open With... mechanism)
