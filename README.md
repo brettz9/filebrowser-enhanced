@@ -15,7 +15,7 @@ Currently is limited to:
 1. Links leading from file:// folders to other data sources like bookmarks, tab groups, remote databases, etc., even if not stored as files on disk (WebDav, Gopher, FTP, etc.? and including browsing through service discovery for files filtered to desired types), thereby allowing sticky notes associated with them; one doesn't HAVE to store the stickies within the same folder (or even a real folder at all), but it makes it easier to discover them in different ways--unless not possible (as with WebDav not under one's control, etc.); however, should allow storing of stickies in abstract way so get saved at same level of database, etc., if database allows this
 1. Integrate with "Desktop" FF addon if his were to use iframes
 1. WebAppFind
-    1. Incorporate [WebAppFind](https://github.com/brettz9/webappfind) functionality upon right-click.
+    1. Incorporate [WebAppFind](https://github.com/brettz9/webappfind) functionality upon right-click (including proposed dialog to prompt user for details like method at run time).
     1. Add right-click features, working with WebAppFind where possible for greater type-aware possibilities (e.g., when creating a file, one could create a bare file of the desired type)
         1. Allow opening of file (rather than FF's download), alias?, or directory;
         1. Allow creation of file, directory or alias (to file or directory) or zip
