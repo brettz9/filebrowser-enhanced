@@ -23,7 +23,7 @@ Currently is limited to:
         1. Allow deleting of a file, directory or alias
         1. Ideally allow copy or cut-and-paste of files/directories (and drag-and-drop for relevant viewing modes)
         1. Support open Git GUI/bash/create repo here, edit in Notepad++, etc., open with, send to, properties, folder permissions
-    1. Allow additional options for opening or editing file in web app (e.g., saving hard-coded web apps for a given file), working with [WebAppFind](https://github.com/brettz9/webappfind) and [ExecuteBuilder](https://builder.addons.mozilla.org/package/204099/latest/) (once the latter is complete)
+    1. Allow additional options for opening or editing file in web app (e.g., saving hard-coded web apps for a given file), working with [WebAppFind](https://github.com/brettz9/webappfind) and [Executable Builder](https://github.com/brettz9/executable-builder) (once the latter is complete)
     1. Consider launching [AsYouWish](https://github.com/brettz9/asyouwish/) apps for integrated command-line or add-on-like behavior (including via file-path-aware right-click).
     1. When user default handlers or right-clicking to "Open with...", Filebrowser Enhanced could be more sophisticated than the file extension-using WebAppFind desktop executables in that it could avoid applying defaults or showing "Open with..." options if the particular detected file type was not relevant (e.g., don't show "edit mytype").
 1. Display file/folder icons
