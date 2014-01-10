@@ -5,6 +5,9 @@
 function l(msg) {
     console.log(msg);
 }
+function $ (sel) {
+    return document.querySelector(sel);
+}
 
 // self.port.emit(name, jsonSerializableData);
 // self.port.on/once/removeListener(name, function () {}); // self.on is used instead for built-in message listening
@@ -17,6 +20,11 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
     
     on('getFileURLFromNativePathResponse', function (fileURL) {
         window.location.href = fileURL;
+    });
+    on('dirPickResult', function (data) {
+        if (data.path) {
+            emit('getFileURLFromNativePath', data.path);
+        }
     });
     on('autocompleteValuesResponse', function (data) {
         var datalist = document.getElementById(data.listID);
@@ -40,7 +48,7 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
         h1.appendChild(jml(
             'input', {
                 type: 'text', id: 'pathBox', list: 'datalist', autocomplete: 'off', autofocus: 'autofocus',
-                size: 100, value: result,
+                size: 95, value: result,
                 $on: {
                     change: function (e) {
                         on('pathExistsResponse', function (pathExists) {
@@ -59,6 +67,11 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
                 }
             },
             'datalist', {id: 'datalist'},
+            'button', {$on: {click: function () {
+                emit('dirPick', {dirPath: $('#pathBox').value, i: '1'});
+            }}}, [
+                'Browse\u2026'
+            ],
             'input', {
                     type: 'button',
                     style: 'border: none; margin-left: 5px; background-color: transparent; width: 25px; background-repeat: no-repeat; '+
