@@ -13,7 +13,8 @@ Currently is limited to:
 1. Integrate or replace built-in desktop browser in a better way: Utilize info at http://stackoverflow.com/questions/18312461/code-responsible-for-browsing-firefoxs-desktop  - also posted at http://forums.mozillazine.org/viewtopic.php?f=19&t=2740643 ? ;
 1. Allow (power) sticky notes to be associated (as hidden files within the directory) to be displayed as an overlay when browsing files (as with a browser add-on and hopefully for a browser-in-browser); some stickies can be file-specific meta-data or folder-specific; scrollable all as one file or as stickies, whether local or remote (see below)
 1. Links leading from file:// folders to other data sources like bookmarks, tab groups, remote databases, etc., even if not stored as files on disk (WebDav, Gopher, FTP, etc.? and including browsing through service discovery for files filtered to desired types), thereby allowing sticky notes associated with them; one doesn't HAVE to store the stickies within the same folder (or even a real folder at all), but it makes it easier to discover them in different ways--unless not possible (as with WebDav not under one's control, etc.); however, should allow storing of stickies in abstract way so get saved at same level of database, etc., if database allows this
-1. Integrate with "Desktop" FF addon if his were to use iframes
+1. Integrate with "Desktop" FF addon if his were to use iframes.
+1. Integrate with Command line (e.g., as attempted in the AsYouWish [demo](https://github.com/brettz9/asyouwish/blob/master/demos/requestPrivs-command-line-demo.html)).
 1. WebAppFind
     1. Incorporate [WebAppFind](https://github.com/brettz9/webappfind) functionality upon right-click (including proposed dialog to prompt user for details like method at run time).
     1. Add right-click features, working with WebAppFind where possible for greater type-aware possibilities (e.g., when creating a file, one could create a bare file of the desired type)
