@@ -35,3 +35,4 @@ Currently is limited to:
 1. Ability to handle multiple files on right-click (unlike what seems readily possibly in Windows through Open With... mechanism)
 1. Any overlap with <https://github.com/FunkMonkey/Loomo>?
 1. Add "Open with" transparently from Windows (though could make WebAppFind filetypes.json aware)
+1. Experiment with 3d WebGL rendering
