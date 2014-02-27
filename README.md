@@ -25,10 +25,31 @@ folder path.
 1. When a file:// URL is right-clicked, a context menu item is displayed
 which can copy the native path of the directory or file to the clipboard.
 
+# Usage scenarios
+
+1. Use with [atyourcommand](https://github.com/brettz9/atyourcommand)
+to allow browsed files to be right-clicked to run on the command line
+(included with saved or run-time prompted) args
+
 # Possible Todos
 
 1. Utilize page selection context menu (shown if current file is
-file:// based) instead of add-on bar icons to allow copy path.
+file:// based) instead of add-on bar icons to allow "copy path" and "reveal"
+(and plain launch, also added to add-on bar?) on current item (and
+if the current document had been opened by WebAppFind, ensure
+its source document path is copied, revealed, or relaunched instead
+of the web app? if not opened by WebAppFind, allow launch in
+WebAppFind so that, e.g., an opened text file can be launched to
+be made editable).
+    1. Split this functionality (along with context menus on file:// links)
+    into one, two, or three different add-ons?
+    1. Reference https://addons.mozilla.org/en-US/firefox/addon/local-filesystem-links/
+    and support its ability to launch (as well as reveal and copy native
+    path of file://?) for items found in the clipboard (albeit potentially
+    with arguments (saved or prompted) in conjunction with
+    [atyourcommand](https://github.com/brettz9/atyourcommand))?
+    1. Prompt for WebAppFind options not only in the file browser but
+    also on right-click on the file icon or equivalent)
 1. Integrate or replace built-in desktop browser in a better way:
 Utilize info at
 http://stackoverflow.com/questions/18312461/code-responsible-for-browsing-firefoxs-desktop
@@ -53,7 +74,8 @@ way so get saved at same level of database, etc., if database allows this
 1. WebAppFind
     1. Incorporate [WebAppFind](https://github.com/brettz9/webappfind)
     functionality upon right-click (including proposed dialog to prompt user
-    for details like method at run time).
+    for details like method at run time); including right-click of
+    current-page add-on bar icon or page context menu
     1. Add right-click features, working with WebAppFind where possible for
     greater type-aware possibilities (e.g., when creating a file, one could
     create a bare file of the desired type)
@@ -86,7 +108,6 @@ way so get saved at same level of database, etc., if database allows this
 1. Ensure reading files in file browser with new Node-friendly API
 so can also reuse code on server or even for HTML Ajax browsing
 of file sources?)
-1. Launch file icons
 1. Re: feature for addon bar icon revealing path of a loaded file,
 have options to map websites this way also, esp. 127.0.0.1/localhost ;
 have option to automatically handle click-to-expose-path if loaded
