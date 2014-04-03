@@ -1,6 +1,8 @@
 Versions
 
-0.3.0
+0.3.1
+* Updated to SDK 1.16
 
+0.3.0
 * Added support for copy path (of file:// files and directories) via context menu
 * Added add-on bar item which can be clicked to get the current file's path or right-clicked to get the current file's directory path.
