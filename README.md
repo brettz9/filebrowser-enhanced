@@ -50,6 +50,13 @@ within Firefox). Then use right click to execute files, copy paths, etc.
 
 # Possible Todos
 
+1. Make npm/bower/Git context menus available on right-clicked
+`file://` path directories
+1. Make australis/toolbar icon to support pull-down of paths which
+can be invoked by keyword command but also can be directly visited
+without the `%s` variable.
+    1. Right-click file/folder to add to hotlist
+    1. Allow location bar to use shortcuts or the like to invoke files?
 1. Utilize page selection context menu (shown if current file is
 file:// based) instead of add-on bar icons to allow "copy path" and "reveal"
 (and plain launch, also added to add-on bar?) on current item (and
