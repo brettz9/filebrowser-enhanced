@@ -1,7 +1,7 @@
 Versions
 
 0.5.0
-* Make stylesheet application optional
+* Feature: Make stylesheet application optional
 
 0.4.0
 * Feature: Add execute and reveal context menu items (available for all file:// URLs even when not on Firefox's directory index pages).
