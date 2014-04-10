@@ -1,9 +1,12 @@
 Versions
 
+0.5.0
+* Make stylesheet application optional
+
 0.4.0
-* Feature: Add execute and reveal context menu items (available for all file:// URLs even when not on the directory index pages).
+* Feature: Add execute and reveal context menu items (available for all file:// URLs even when not on Firefox's directory index pages).
 * Feature: Support memory for which column was sorted and whether ascending or descending
-* Change: Change styles to expand real estate at top of directory index pages for greater capability of regular use
+* Change: Change styles to expand real estate at top of Firefox's directory index pages for greater capability of regular use
 * Info: See README for idea on using bookmarks in a toolbar folder for quick access or with keywords
 
 0.3.1
