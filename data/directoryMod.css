@@ -1,0 +1,17 @@
+:root {
+    background-color: transparent !important;
+    /*
+    padding-left: 0px;
+    padding-right: 0px;
+    */
+}
+body {
+    border: 0px !important;
+    padding: 0px !important;
+    margin-top: 0px !important;
+    /*
+    If we don't want width:
+    max-width: 100% !important;
+    margin: 0px !important;
+    */
+}

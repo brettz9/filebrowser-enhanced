@@ -23,13 +23,30 @@ add-on bar which, when clicked, copies the file's (or directory's) native
 path, or when right-clicked, copies the file's (or directory's) parent
 folder path.
 1. When a file:// URL is right-clicked, a context menu item is displayed
-which can copy the native path of the directory or file to the clipboard.
+which can:
+    1. ...copy the native path of the directory or file to the clipboard.
+    1. ...reveal the file
+    1. ...execute (launch) the file (Windows only?)
+1. Modifies the default styling of folder views in Firefox to remove the
+large top empty space
+1. Clicking on a column causes sort order to be remembered in URL
+and in subsequent clicks
 
 # Usage scenarios
 
 1. Use with [atyourcommand](https://github.com/brettz9/atyourcommand)
 to allow browsed files to be right-clicked to run on the command line
 (included with saved or run-time prompted) args
+1. Make bookmarks pointing to local folders or files (including within a
+bookmarks folder on your toolbar (which can serve as a hotlist of
+your favorite folders) and/or define
+[keywords](http://kb.mozillazine.org/Using_keyword_searches)
+for them, optionally allowing for arguments via `%s` in the path so that
+you can type say "home myDirectory" to open a view of the local folder
+within Firefox). Then use right click to execute files, copy paths, etc.
+
+# Higher-priority todos
+1. Make application of stylesheet customizable
 
 # Possible Todos
 
@@ -79,8 +96,8 @@ way so get saved at same level of database, etc., if database allows this
     1. Add right-click features, working with WebAppFind where possible for
     greater type-aware possibilities (e.g., when creating a file, one could
     create a bare file of the desired type)
-        1. Allow opening of file (rather than FF's download), alias?,
-        or directory
+        1. Change opening of file (rather than FF's download), alias,
+        or directory to work with WebAppFind
         1. Allow creation of file, directory or alias (to file or directory)
         or zip
         1. Allow renaming (or moving) of a file, directory or alias
