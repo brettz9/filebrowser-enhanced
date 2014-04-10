@@ -7,7 +7,7 @@ Versions
 * Feature: Add execute and reveal context menu items (available for all file:// URLs even when not on Firefox's directory index pages).
 * Feature: Support memory for which column was sorted and whether ascending or descending
 * Change: Change styles to expand real estate at top of Firefox's directory index pages for greater capability of regular use
-* Info: See README for idea on using bookmarks in a toolbar folder for quick access or with keywords
+* Info: See README at https://github.com/brettz9/filebrowser-enhanced for idea on using bookmarks in a toolbar folder for quick access or with keywords
 
 0.3.1
 * Maintenance: Updated to SDK 1.16
