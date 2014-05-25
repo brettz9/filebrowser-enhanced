@@ -50,6 +50,8 @@ within Firefox). Then use right click to execute files, copy paths, etc.
 
 # Possible Todos
 
+1. Support opening file:// links from remote sites as per [LocalLink](http://locallink.mozdev.org/)
+([AMO](https://addons.mozilla.org/en-US/firefox/addon/locallink/))
 1. Make npm/bower/Git context menus available on right-clicked
 `file://` path directories
 1. Make australis/toolbar icon to support pull-down of paths which
