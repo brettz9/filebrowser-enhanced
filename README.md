@@ -46,6 +46,9 @@ you can type say "home myDirectory" to open a view of the local folder
 within Firefox). Then use right click to execute files, copy paths, etc.
 
 # Higher-priority todos
+1. Per AMO review requirement, prompt user whenever they try to reveal or
+execute a local file from a remote site, with the option to whitelist a
+particular domain.
 1. Make application of stylesheet customizable
 
 # Possible Todos
