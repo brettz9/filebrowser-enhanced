@@ -148,3 +148,6 @@ readily possibly in Windows through Open With... mechanism)
 1. Experiment with 3d WebGL rendering
 1. Column browser / hierarchical folder browsing
 1. Smart folders ala Awesome Bar but for file:// only (per user request)
+	1. Support interaction with Awesome Bar [options](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_how-can-i-control-what-results-the-location-bar-shows-me)
+	(or equivalent) and [flags](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_changing-results-on-the-fly)
+1. Add filtering of current files/folders (per user request)
