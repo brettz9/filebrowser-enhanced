@@ -146,3 +146,5 @@ readily possibly in Windows through Open With... mechanism)
 1. Any overlap with <https://github.com/FunkMonkey/Loomo>?
 1. Add "Open with" transparently from Windows (though could make WebAppFind filetypes.json aware)
 1. Experiment with 3d WebGL rendering
+1. Column browser / hierarchical folder browsing
+1. Smart folders ala Awesome Bar but for file:// only (per user request)
