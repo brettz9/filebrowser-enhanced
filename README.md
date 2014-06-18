@@ -152,3 +152,5 @@ readily possibly in Windows through Open With... mechanism)
 	(or equivalent) and [flags](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_changing-results-on-the-fly)
 1. Add filtering of current files/folders (per user request)
 1. Support tab/shift-tab key for autocomplete as in Windows explorer (per user request)
+1. Ensure launched files (including via AtYourCommand) somehow can get added
+to history instead of only those pages viewable and viewed in the browser.
