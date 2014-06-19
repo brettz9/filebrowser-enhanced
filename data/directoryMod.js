@@ -12,7 +12,7 @@ function $ (sel) {
 
 var gTable = document.getElementsByTagName('table')[0];
 if (!gTable) { // Exit as we should be inside a rendered file
-	return;
+    return;
 }
 var i,
     headCells = gTable.tHead.rows[0].cells,
