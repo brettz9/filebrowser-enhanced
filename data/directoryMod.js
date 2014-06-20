@@ -1,4 +1,4 @@
-/*globals self, jml*/
+/*globals self, jml, console, window, document, location*/
 /*jslint vars:true*/
 (function () {
     'use strict';
@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // self.port.emit(name, jsonSerializableData);
 // self.port.on/once/removeListener(name, function () {}); // self.on is used instead for built-in message listening
 
-var on, emit, options;
-if (window.location.href.indexOf('.') === -1) { // In a directory (regex should remove need for this once working)
-    on = self.port.on;
-    emit = self.port.emit;
+var on = self.port.on,
+    emit = self.port.emit,
     options = self.options;
+
+on('getNativePathFromFileURLIfADirectory', function (nativePath) {
     
     on('selectInput', function () {
         $('#pathBox').select();
@@ -97,63 +97,63 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
         while (datalist.firstChild) {
             datalist.removeChild(datalist.firstChild);
         }
+        if (data.optValues.length && data.optValues.indexOf($('#pathBox').value) === -1) {
+            $('#pathBox').title = data.optValues[0]; // Todo: Temporary reminder that the value may differ from display (we need a better widget than datalist!)
+        }
         data.optValues.forEach(function (optValue) {
             var option = jml('option', {
-                // text: optValue,
+                // text: data.userVal,
                 value: optValue
             });
             datalist.appendChild(option);
         });
     });
-    on('getNativePathFromFileURLResponse', function (result) {
-        var h1 = $('h1');
-        while (h1.firstChild) {
-            h1.removeChild(h1.firstChild);
-        }
-        h1.appendChild(document.createTextNode('Index of '));
-        h1.appendChild(jml(
-            'input', {
-                type: 'text', id: 'pathBox', list: 'datalist', autocomplete: 'off', autofocus: 'autofocus',
-                size: 95, value: result,
-                $on: {
-                    change: function (e) {
-                        on('pathExistsResponse', function (pathExists) {
-                            if (pathExists) {
-                                emit('getFileURLFromNativePath', e.target.value);
-                            }
-                        });
-                        emit('pathExists', e.target.value);
-                    },
-                    input: function (e) {
-                        emit('autocompleteValues', {
-                            value: e.target.value,
-                            listID: e.target.getAttribute('list')
-                        });
-                    }
+    var h1 = $('h1');
+    while (h1.firstChild) {
+        h1.removeChild(h1.firstChild);
+    }
+    h1.appendChild(document.createTextNode('Index of '));
+    h1.appendChild(jml(
+        'input', {
+            type: 'text', id: 'pathBox', list: 'datalist', autocomplete: 'off', autofocus: 'autofocus',
+            size: 95, value: nativePath,
+            $on: {
+                change: function (e) {
+                    on('pathExistsResponse', function (pathExists) {
+                        if (pathExists) {
+                            emit('getFileURLFromNativePath', e.target.value);
+                        }
+                    });
+                    emit('pathExists', e.target.value);
+                },
+                input: function (e) {
+                    emit('autocompleteValues', {
+                        value: e.target.value,
+                        listID: e.target.getAttribute('list')
+                    });
                 }
-            },
-            'datalist', {id: 'datalist'},
-            'button', {$on: {click: function () {
-                emit('dirPick', {dirPath: $('#pathBox').value, i: '1'});
-            }}}, [
-                'Browse\u2026'
-            ],
-            'input', {
-                    type: 'button',
-                    style: 'border: none; margin-left: 5px; background-color: transparent; width: 25px; background-repeat: no-repeat; '+
-                            'background-size: 20px 20px; '+
-                            'background-image: url("' + options.folderImage + '");',
-                    $on: {click: function () {
-                        emit('reveal', result);
-                    }}
-                }, null
-        ));
-        var input = $('#pathBox');
-        input.focus();
-        input.setSelectionRange(input.value.length, input.value.length);
-    });
-    emit('getNativePathFromFileURL', document.baseURI);
-
+            }
+        },
+        'datalist', {id: 'datalist'},
+        'button', {$on: {click: function () {
+            emit('dirPick', {dirPath: $('#pathBox').value, i: '1'});
+        }}}, [
+            'Browse\u2026'
+        ],
+        'input', {
+                type: 'button',
+                style: 'border: none; margin-left: 5px; background-color: transparent; width: 25px; background-repeat: no-repeat; '+
+                        'background-size: 20px 20px; '+
+                        'background-image: url("' + options.folderImage + '");',
+                $on: {click: function () {
+                    emit('reveal', nativePath);
+                }}
+            }, null
+    ));
+    var input = $('#pathBox');
+    input.focus();
+    input.setSelectionRange(input.value.length, input.value.length);
+});
     /*window.addEventListener('click', function (e) {
         var el;
         if (e.button === 2) {
@@ -161,6 +161,5 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
             emit('getNativePathFromFileURL', [el.href]);
         }
     });*/
-}
 
 }());
