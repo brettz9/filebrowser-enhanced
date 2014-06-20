@@ -81,8 +81,8 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
     options = self.options;
     
     on('selectInput', function () {
-        $('#pathBox').focus();
         $('#pathBox').select();
+        $('#pathBox').focus();
     });
     on('getFileURLFromNativePathResponse', function (fileURL) {
         window.location.href = fileURL;
