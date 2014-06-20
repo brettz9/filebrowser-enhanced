@@ -53,6 +53,8 @@ particular domain.
 
 # Possible Todos
 
+1. Figure out way around "pageshow" problem of path input not getting
+populate when using back button in browser.
 1. Support opening file:// links from remote sites as per [LocalLink](http://locallink.mozdev.org/)
 ([AMO](https://addons.mozilla.org/en-US/firefox/addon/locallink/))
 1. Make npm/bower/Git context menus available on right-clicked
