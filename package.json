@@ -15,7 +15,7 @@
         {
             "name": "conserveSpace",
             "title": "Apply space-conserving styles",
-            "description": "Apply styles which hide unused space, borders, etc. at the top of FIrefox's file directory indexes",
+            "description": "Apply styles which hide unused space, borders, etc. at the top of Firefox's file directory indexes",
             "type": "bool",
             "value": true
         }
