@@ -47,12 +47,17 @@ within Firefox). Then use right click to execute files, copy paths, etc.
 
 # Higher-priority todos
 1. Per AMO review requirement, prompt user whenever they try to reveal or
-execute a local file from a remote site, with the option to whitelist a
-particular domain.
-1. Make application of stylesheet customizable
+execute a local file from a remote site (ideally with the option to whitelist a
+particular domain) though for now just a global preference.
+1. Get [jawbar](https://github.com/brettz9/jawbar) applied in place of datalist
+for a richer display and decouping of user input, data, and display text.
+    1. Provide keyboard navigation
+1. Resubmit to AMO (and note to reviewers that other concerns from
+last review should be overcome)
 
 # Possible Todos
 
+1. Make application of stylesheet customizable
 1. Figure out way around "pageshow" problem of path input not getting
 populate when using back button in browser.
 1. Support opening file:// links from remote sites as per [LocalLink](http://locallink.mozdev.org/)
