@@ -18,6 +18,13 @@
             "description": "Apply styles which hide unused space, borders, etc. at the top of Firefox's file directory indexes",
             "type": "bool",
             "value": true
+        },
+        {
+            "name": "revealLaunchNoPrompt",
+            "title": "Reveal or Launch without prompts",
+            "description": "Allow reveal and launches without confirmatory prompts",
+            "type": "bool",
+            "value": false
         }
     ]
 }
