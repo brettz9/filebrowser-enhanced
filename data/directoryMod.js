@@ -47,7 +47,7 @@ function rowAction (i) {
 document.addEventListener('DOMContentLoaded', function() {
     if (sort) {
         var queryString = '?sort=' + sort + '&asc=' + asc;
-        var up = document.querySelector('.up');
+        var up = $('.up');
         if (up) { // Not present at top level
             up.href += queryString;
         }
@@ -80,6 +80,10 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
     emit = self.port.emit;
     options = self.options;
     
+    on('selectInput', function () {
+        $('#pathBox').focus();
+        $('#pathBox').select();
+    });
     on('getFileURLFromNativePathResponse', function (fileURL) {
         window.location.href = fileURL;
     });
@@ -102,7 +106,7 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
         });
     });
     on('getNativePathFromFileURLResponse', function (result) {
-        var h1 = document.querySelector('h1');
+        var h1 = $('h1');
         while (h1.firstChild) {
             h1.removeChild(h1.firstChild);
         }
@@ -144,7 +148,7 @@ if (window.location.href.indexOf('.') === -1) { // In a directory (regex should 
                     }}
                 }, null
         ));
-        var input = document.querySelector('#pathBox');
+        var input = $('#pathBox');
         input.focus();
         input.setSelectionRange(input.value.length, input.value.length);
     });
