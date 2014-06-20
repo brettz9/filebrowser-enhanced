@@ -11,7 +11,7 @@ function $ (sel) {
 }
 
 var gTable = document.getElementsByTagName('table')[0];
-if (!gTable) { // Exit as we should be inside a rendered file
+if (!gTable) { // Exit as we don't want to continue inside a rendered file
     return;
 }
 var i,
