@@ -51,7 +51,6 @@ execute a local file from a remote site (ideally with the option to whitelist a
 particular domain) though for now just a global preference.
 1. Get [jawbar](https://github.com/brettz9/jawbar) applied in place of datalist
 for a richer display and decouping of user input, data, and display text.
-    1. Provide keyboard navigation
 1. Resubmit to AMO (and note to reviewers that other concerns from
 last review should be overcome)
 
@@ -161,3 +160,7 @@ readily possibly in Windows through Open With... mechanism)
 1. Support tab/shift-tab key for autocomplete as in Windows explorer (per user request)
 1. Ensure launched files (including via AtYourCommand) somehow can get added
 to history instead of only those pages viewable and viewed in the browser.
+1. Utilize
+[js-ctypes](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes)
+to provide option to populate path selection with OS-specific file results
+as well as or in place of our own location bar algorithm
