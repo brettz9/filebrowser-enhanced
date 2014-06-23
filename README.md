@@ -53,6 +53,9 @@ particular domain) though for now just a global preference.
 for a richer display and decouping of user input, data, and display text.
 1. Resubmit to AMO (and note to reviewers that other concerns from
 last review should be overcome)
+1. Allow file:// execute to be done with specific Windows
+"[verbs](http://msdn.microsoft.com/en-us/library/bb165967.aspx)"
+(i.e., Open, Edit, Print, Play, Preview or custom).
 
 # Possible Todos
 
