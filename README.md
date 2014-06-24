@@ -44,6 +44,11 @@ your favorite folders) and/or define
 for them, optionally allowing for arguments via `%s` in the path so that
 you can type say "home myDirectory" to open a view of the local folder
 within Firefox). Then use right click to execute files, copy paths, etc.
+1. If you are a Windows user, you may find
+[this batch file](https://github.com/brettz9/webappfind/blob/master/batch/openFolderInFirefox.bat)
+added to your "SendTo" directory, convenient for allowing one to
+open a directory you are browsing on the Windows desktop into
+Firefox's file browser.
 
 # Higher-priority todos
 1. Per AMO review requirement, prompt user whenever they try to reveal or
@@ -157,8 +162,8 @@ readily possibly in Windows through Open With... mechanism)
 1. Experiment with 3d WebGL rendering
 1. Column browser / hierarchical folder browsing
 1. Smart folders ala Awesome Bar but for file:// only (per user request)
-	1. Support interaction with Awesome Bar [options](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_how-can-i-control-what-results-the-location-bar-shows-me)
-	(or equivalent) and [flags](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_changing-results-on-the-fly)
+    1. Support interaction with Awesome Bar [options](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_how-can-i-control-what-results-the-location-bar-shows-me)
+    (or equivalent) and [flags](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_changing-results-on-the-fly)
 1. Add filtering of current files/folders (per user request)
 1. Support tab/shift-tab key for autocomplete as in Windows explorer (per user request)
 1. Ensure launched files (including via AtYourCommand) somehow can get added
