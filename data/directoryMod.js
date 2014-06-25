@@ -112,7 +112,7 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
             };
         });
         if (jbar) {
-//            jbar.remove().add(jbarOpts);
+            jbar.remove().add(jbarOpts);
         }
         else {
             jbar = new JawBar('#pathBox', jbarOpts);
