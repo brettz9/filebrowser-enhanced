@@ -147,7 +147,7 @@ way so get saved at same level of database, etc., if database allows this
     particular detected file type was not relevant (e.g., don't show
     "edit mytype").
 1. Add meta-data columns (at least "permissions" appears available)
-1. Add file search (through js-ctypes?)
+1. Add OS (across all drive or all drives) file search (through js-ctypes?)
 1. Ensure reading files in file browser with new Node-friendly API
 so can also reuse code on server or even for HTML Ajax browsing
 of file sources?)
