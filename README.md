@@ -64,6 +64,7 @@ last review should be overcome)
 
 # Possible Todos
 
+1. Column browser / hierarchical folder / large icon browsing
 1. Make application of stylesheet customizable
 1. Figure out way around "pageshow" problem of path input not getting
 populate when using back button in browser.
@@ -156,11 +157,11 @@ have options to map websites this way also, esp. 127.0.0.1/localhost ;
 have option to automatically handle click-to-expose-path if loaded
 through WebAppFind (since we know where the path originated)
 1. Ability to handle multiple files on right-click (unlike what seems
-readily possibly in Windows through Open With... mechanism)
+readily possibly in Windows through Open With... mechanism but
+is possible with SendTo)
 1. Any overlap with <https://github.com/FunkMonkey/Loomo>?
 1. Add "Open with" transparently from Windows (though could make WebAppFind filetypes.json aware)
 1. Experiment with 3d WebGL rendering
-1. Column browser / hierarchical folder browsing
 1. Smart folders ala Awesome Bar but for file:// only (per user request)
     1. Support interaction with Awesome Bar [options](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_how-can-i-control-what-results-the-location-bar-shows-me)
     (or equivalent) and [flags](https://support.mozilla.org/en-US/kb/awesome-bar-find-your-bookmarks-history-and-tabs#w_changing-results-on-the-fly)
