@@ -11,6 +11,9 @@
         "type": "git",
         "url": "https://github.com/brettz9/filebrowser-enhanced.git"
     },
+    "scripts": {
+        "prepublish": "bower install jawbar"
+    },
     "preferences": [
         {
             "name": "conserveSpace",

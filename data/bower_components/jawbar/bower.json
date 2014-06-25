@@ -1,0 +1,11 @@
+{
+	"name": "jawbar",
+	"version": "1.0.0",
+	"homepage": "https://github.com/brettz9/jawbar",
+	"authors": [
+		"Lewis Linn White Jr.",
+		"Brett Zamir <brettz9@yahoo.com>"
+	],
+	"description": "Vanilla JavaScript implementation of Firefox's \"Awesome Bar\"",
+	"license": "MIT"
+}

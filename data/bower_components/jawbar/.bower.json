@@ -1,0 +1,20 @@
+{
+  "name": "jawbar",
+  "homepage": "https://github.com/brettz9/jawbar",
+  "authors": [
+    "Lewis Linn White Jr.",
+    "Brett Zamir <brettz9@yahoo.com>"
+  ],
+  "description": "Vanilla JavaScript implementation of Firefox's \"Awesome Bar\"",
+  "license": "MIT",
+  "_release": "9c88cd0a3a",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9c88cd0a3a0771ffe06806bed2cf18ce77727005"
+  },
+  "_source": "git://github.com/brettz9/jawbar.git",
+  "_target": "*",
+  "_originalSource": "jawbar",
+  "_direct": true
+}

@@ -1,0 +1,52 @@
+.jawbar-optionContainer {
+    position: absolute;
+    visibility: visible;
+    z-index: 101;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    overflow: auto;
+}
+.jawbar-hidden {
+    visibility: hidden;
+}
+
+.jawbar-dropdownButton {
+    position: absolute;
+    border: 0px;
+    width: 5px;
+    background: url(../images/down.png) center no-repeat;
+    cursor: pointer;
+}
+.jawbar-imageContainer {
+    font-size: 0px;
+    padding: 2px;
+    float: left;
+    width: 16px;
+}
+
+.jawbar-menuitem {
+    color: #000000;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+    display: block;
+}
+.jawbar-menuitem-hover { /* To support keyboard-initiated hover, we need a class instead of :hover because mouseover, as it is not a trusted event, cannot be simulated to activate :hover (see http://stackoverflow.com/a/17226753 )*/
+    color: #ffffff;
+    background-color: #0099ff;
+}
+.jawbar-menuitem-removed {
+    display: none;
+}
+.jawbar-menuitem-icon {
+    vertical-align: top;
+    border: 0px;
+}
+
+.jawbar-menuitem-text {
+    font-size: 15pt;
+}
+.jawbar-menuitem-subText {
+    font-size: 10pt;
+    font-style: italic;
+}

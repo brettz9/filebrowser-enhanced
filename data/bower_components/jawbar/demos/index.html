@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+    <link href="../src/styles/jawbar.css" rel="stylesheet" type="text/css" />
+    <link href="styles/demo.css" rel="stylesheet" type="text/css" />
+    <script src="../src/jawbar.js"></script>
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var jbar = new JawBar('#awesome', [
+            {text: 'Ubuntu', subtext: 'The best linux desktop around.', icon: 'images/ubuntu.png', searchValue: 'ubuntu linux os technology', displayValue: 'http://www.ubuntu.com'},
+            {text: 'CodeProject', subtext: 'Free Source code and Programming help', icon: 'images/codeproject.png', searchValue: 'asp.net c# .net programming code technology', displayValue: 'http://www.codeproject.com'},
+            {text: 'Wikipedia', subtext: 'An encyclopedia anyone can edit', icon: 'images/wikipedia.png', searchValue: 'wiki', displayValue: 'http://en.wikipedia.com'},
+            {text: 'JCritters', subtext: 'MSAgent-style interactive critters', icon: 'images/star.png', searchValue: 'jcritter', displayValue: 'http://www.jcritters.com'},
+            {text: 'Slashdot', subtext: 'News for nerds.', icon: 'images/slashdot.png', searchValue: 'slashdot code programming nerds technology', displayValue: 'http://slashdot.org'},
+            {text: 'Dictionary.com', subtext: 'An online dictionary.', icon: 'images/dictionary.png', searchValue: 'dictionary', displayValue: 'http://www.dictionary.com'}
+        ]);
+    });
+    </script>
+</head>
+<body>
+<div><input id="awesome" type="text" /></div>
+</body>
+</html>
