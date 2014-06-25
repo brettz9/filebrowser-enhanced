@@ -10,8 +10,8 @@ function $ (sel) {
     return document.querySelector(sel);
 }
 
-var gTable = document.getElementsByTagName('table')[0];
-if (!gTable) { // Exit as we don't want to continue inside a rendered file
+var gTable = document.querySelector('table');
+if (!gTable || !document.querySelector('#UI_showHidden')) { // Exit as we don't want to continue inside a rendered file and can't accurately filter context menu by selector
     return;
 }
 var i,
