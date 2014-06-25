@@ -13,7 +13,7 @@ function visible_in_container(p, e) {
 }
 function JawBar(sel, options) {
     var that = this;
-    this.parent = document.querySelector(sel);
+    this.parent = typeof sel === 'string' ? document.querySelector(sel) : sel;
     this.init();
     this.hide();
     if (options) {
@@ -167,11 +167,13 @@ JawBar.prototype.position = function() {
     buttonStyle.height = this.parent.offsetHeight + 'px';
     buttonStyle.top = this.parent.offsetTop + 'px';
     buttonStyle.left = this.parent.offsetLeft + this.parent.offsetWidth - 15 + 'px';
+    return this;
 };
 
 JawBar.prototype.show = function() {
     this.html.div.classList.toggle('jawbar-hidden', false);
     this.visible = true;
+    return this;
 };
 
 JawBar.prototype.add = function(options) {
@@ -179,7 +181,7 @@ JawBar.prototype.add = function(options) {
         options.forEach(function (option) {
             this.add(option);
         }, this);
-        return;
+        return this;
     }
     var that = this;
     var item = document.createElement('div');
@@ -211,11 +213,13 @@ JawBar.prototype.add = function(options) {
     });
     this.html.div.appendChild(item);
     imageDiv.style.height = item.offsetHeight - 10 + 'px';
+    return this;
 };
 
 JawBar.prototype.hide = function () {
     this.visible = false;
     this.html.div.classList.toggle('jawbar-hidden', true);
+    return this;
 };
 
 JawBar.prototype.findMatch = function (e) {
@@ -237,11 +241,12 @@ JawBar.prototype.remove = function(index) {
     var div = this.html.div;
     if (typeof index === 'number') {
         div.removeChild(div.childNodes[index]);
-        return;
+        return this;
     }
     while(this.html.div.firstChild) {
         div.removeChild(div.firstChild);
     }
+    return this;
 };
 
 // See jawbar.css on why we can't move these to CSS

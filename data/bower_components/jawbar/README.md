@@ -29,7 +29,8 @@ out of the JavaScript), add this:
 ## Constructor
 
 The first argument to the constructor is a CSS selector of a textbox
-you wish to convert into an awesome bar.
+you wish to convert into an awesome bar (or the DOM element
+of the textbox).
 
 ```javascript
 var bar = new JawBar('#myid');
@@ -42,6 +43,8 @@ An optional second argument can be provided to set the options. (See
 the `add()` method.)
 
 ## Methods
+
+The following methods all return the jawbar object so you can keep chaining methods jQuery-style.
 
 - `object.add(options)`: Adds a new item to the awesome bar. `options` is a JavaScript object containing the text you want to add, among other things.
 - `object.position()`: Attempts to position a hidden `div` for your awesome bar. You shouldn't need to call this, but if you alter your element's positions, you may have to.
