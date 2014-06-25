@@ -1,11 +1,11 @@
 Versions
 
 0.6.0
-* Feature: Ctrl-shift-L (or command-shift-L) to highlight pathBox contents
 * Feature: Awesome Bar imitation for file:// URLs
+* Feature: Ctrl-shift-L (or command-shift-L) to highlight pathBox contents
 * Feature: Add icon for copy-path and create separate icon for copy (parent) directory path
 * Feature: Auto-hide copy parent directory path and if not relevant
-* Security feature: Restrict reveal/launch access to file:// URLs if site is on other scheme than file://
+* Security feature: Restrict reveal/launch access to file:// URLs if site is on other scheme than file:// (AMO requirement)
 * Bug: Ensure icon status updates when the user uses back/forward buttons
 * Bug: Better checking to avoid inserting search bar into files!
 * Bug: Fix interaction problem with new SDK implementation and upgrade to use new UI interface
