@@ -12,7 +12,7 @@
         "url": "https://github.com/brettz9/filebrowser-enhanced.git"
     },
     "scripts": {
-        "prepublish": "bower install jawbar"
+        "prepublish": "bower install jawbar && rd /s /q \"data\\bower_components\\jawbar\\demos\""
     },
     "preferences": [
         {
