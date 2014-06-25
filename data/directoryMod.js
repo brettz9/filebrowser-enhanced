@@ -107,10 +107,11 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
                 text: optValue.title, // + optValue.keyword,
                 subtext: optValue.url, // +tags, +bookmark star if a bookmark (todo: add bookmark group/updated or history visitCount/dateAdded/lastModified via tooltip?)
                 icon: optValue.favicon,
-                searchValue: optValue.title + ' ' + optValue.url,
+                searchValue: (optValue.isDir ? '' : optValue.title + ' ') + optValue.url,
                 displayValue: optValue.url
             };
         });
+l(jbarOpts);
         if (jbar) {
             jbar.remove().add(jbarOpts);
         }
