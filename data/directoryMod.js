@@ -1,5 +1,5 @@
-/*globals self, jml, console, window, document, location*/
-/*jslint vars:true*/
+/*globals self, jml, JawBar, console, window, document, location*/
+/*jslint vars:true, todo:true*/
 (function () {
     'use strict';
 
@@ -74,7 +74,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // self.port.emit(name, jsonSerializableData);
 // self.port.on/once/removeListener(name, function () {}); // self.on is used instead for built-in message listening
 
-var on = self.port.on,
+var jbar,
+    on = self.port.on,
     emit = self.port.emit,
     options = self.options;
 
@@ -93,20 +94,29 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
         }
     });
     on('autocompleteValuesResponse', function (data) {
-        var datalist = document.getElementById(data.listID);
-        while (datalist.firstChild) {
-            datalist.removeChild(datalist.firstChild);
-        }
-        if (data.optValues.length && data.optValues.indexOf($('#pathBox').value) === -1) {
-            $('#pathBox').title = data.optValues[0]; // Todo: Temporary reminder that the value may differ from display (we need a better widget than datalist!)
-        }
-        data.optValues.forEach(function (optValue) {
-            var option = jml('option', {
-                // text: data.userVal,
-                value: optValue
-            });
-            datalist.appendChild(option);
+        // l(data.userVal);
+        // Real Awesome Bar includes: icon, title + keyword icon, URL, tags, bookmark star
+        /*
+        Properties:
+            History: 'title', 'url', 'keyword', // 'date', 'visitCount', 'dateAdded' and 'lastModified
+            Bookmarks: 'title', 'url', 'tags', // 'group', 'index', 'updated'
+        */
+        // Convert Set (of tags) to array:  [v for (v of mySet)] // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+        var jbarOpts = data.optValues.map(function (optValue) {
+            return {
+                text: optValue.title, // + optValue.keyword,
+                subtext: optValue.url, // +tags, +bookmark star if a bookmark (todo: add bookmark group/updated or history visitCount/dateAdded/lastModified via tooltip?)
+                icon: optValue.favicon,
+                searchValue: optValue.title + ' ' + optValue.url,
+                displayValue: optValue.url
+            };
         });
+        if (jbar) {
+//            jbar.remove().add(jbarOpts);
+        }
+        else {
+            jbar = new JawBar('#pathBox', jbarOpts);
+        }
     });
     var h1 = $('h1');
     while (h1.firstChild) {
@@ -115,7 +125,7 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
     h1.appendChild(document.createTextNode('Index of '));
     h1.appendChild(jml(
         'input', {
-            type: 'text', id: 'pathBox', list: 'datalist', autocomplete: 'off', autofocus: 'autofocus',
+            type: 'text', id: 'pathBox', autocomplete: 'off', autofocus: 'autofocus',
             size: 95, value: nativePath,
             $on: {
                 change: function (e) {
@@ -134,7 +144,6 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
                 }
             }
         },
-        'datalist', {id: 'datalist'},
         'button', {$on: {click: function () {
             emit('dirPick', {dirPath: $('#pathBox').value, i: '1'});
         }}}, [
