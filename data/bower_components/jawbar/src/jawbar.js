@@ -1,4 +1,5 @@
 /*globals document, window*/
+/*jslint vars:true*/
 (function () {'use strict';
 
 // http://stackoverflow.com/a/16211222/271577
@@ -12,7 +13,6 @@ function visible_in_container(p, e) {
              r.left > z.right || r.right < z.left);
 }
 function JawBar(sel, options) {
-    var that = this;
     this.parent = typeof sel === 'string' ? document.querySelector(sel) : sel;
     this.init();
     this.hide();
@@ -40,34 +40,27 @@ JawBar.prototype.init = function() {
     button.type = 'button';
     button.className = 'jawbar-dropdownButton';
 
-    // Holding container for the button and option container
-    var holder = this.html.holder = document.createElement('div');
-    holder.appendChild(this.html.button);
-    holder.appendChild(this.html.div);
-
-    holder.addEventListener('click', function() {
+    button.addEventListener('click', function() {
         if (that.visible) {
             that.hide();
         }
         else {
+            that.parent.focus();
             that.show();
         }
     });
     
     this.position();
     
-    var container = document.createElement('div');
-    var div = this.html.div;
-    container.appendChild(this.parent);
-    container.appendChild(this.html.holder);
-    container.addEventListener('keyup', function(e) {
+    function keyNavigation (e) {
+        var child;
         switch (e.keyCode) {
             case 27: // Escape key
                 that.hide();
                 return;
             case 35: // End of page
                 that.show();
-                var child = div.lastElementChild;
+                child = div.lastElementChild;
                 child.scrollIntoView();
                 that._hoverItem({target: child});
 /*
@@ -89,25 +82,25 @@ simulateHover(div.lastElementChild);
                 return;
             case 36: // Home
                 that.show();
-                var child = div.firstElementChild;
+                child = div.firstElementChild;
                 child.scrollIntoView();
                 that._hoverItem({target: child});
                 return;
             case 38: // Up arrow
                 that.show();
-                var child = (that.prevHover && (that.prevHover.previousElementSibling || div.firstElementChild)) || div.firstElementChild;
+                child = (that.prevHover && (that.prevHover.previousElementSibling || div.firstElementChild)) || div.firstElementChild;
                 child.scrollIntoView();
                 that._hoverItem({target: child});
                 return;
             case 40: // Down arrow
                 that.show();
-                var child = (that.prevHover && (that.prevHover.nextElementSibling || div.lastElementChild)) || div.firstElementChild;
+                child = (that.prevHover && (that.prevHover.nextElementSibling || div.lastElementChild)) || div.firstElementChild;
                 child.scrollIntoView();
                 that._hoverItem({target: child});
                 return;
             case 33: // Page up
                 that.show();
-                var child = that.prevHover || div.firstElementChild;
+                child = that.prevHover || div.firstElementChild;
                 while (child && visible_in_container(div, child)) { // Try to get next child out of scroll view; otherwise, all is in view
                     child = child.previousElementSibling;
                 }
@@ -119,7 +112,7 @@ simulateHover(div.lastElementChild);
                 return;
             case 34: // Page down
                 that.show();
-                var child = that.prevHover || div.firstElementChild;
+                child = that.prevHover || div.firstElementChild;
                 while (child && visible_in_container(div, child)) { // Try to get next child out of scroll view; otherwise, all is in view
                     child = child.nextElementSibling;
                 }
@@ -131,7 +124,7 @@ simulateHover(div.lastElementChild);
                 return;
             case 13: // Enter
                 if (that.prevHover) {
-                    that.parent.value = that.prevHover.dataset.jawbarDisplayValue
+                    that.parent.value = that.prevHover.dataset.jawbarDisplayValue;
                     that.parent.select();
                     that.hide();
                     return;
@@ -144,16 +137,18 @@ simulateHover(div.lastElementChild);
                 break;
         }
         that.findMatch(e);
+    }
+
+
+    div.addEventListener('keyup', keyNavigation);
+    this.parent.addEventListener('keyup', keyNavigation);
+
+    div.addEventListener('click', function (e) {
+        that.hide();
     });
-    document.addEventListener('click', function (e) {
-        if (e.target === that.html.button) {
-            that.parent.focus();
-        }
-        else {
-            that.hide();
-        }
-    });
-    document.body.appendChild(container);
+
+    document.body.appendChild(button);
+    document.body.appendChild(div);
 };
 
 JawBar.prototype.position = function() {
@@ -223,11 +218,12 @@ JawBar.prototype.hide = function () {
 };
 
 JawBar.prototype.findMatch = function (e) {
+    var i, l;
     if (!this.visible) {
         this.show();
     }
     var items = this.html.div.children;
-    for (var i = 0, l = items.length; i < l; i++) {
+    for (i = 0, l = items.length; i < l; i++) {
         if (items[i].dataset.jawbarSearchValue.indexOf(this.parent.value) > -1) {
             items[i].classList.toggle('jawbar-menuitem-removed', false);
         }
