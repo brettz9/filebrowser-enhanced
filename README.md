@@ -53,9 +53,6 @@ Firefox's file browser.
 # Higher-priority todos
 1. Resubmit to AMO (and note to reviewers that other concerns from
 last review should be overcome)
-1. Allow file:// execute to be done with specific Windows
-"[verbs](http://msdn.microsoft.com/en-us/library/bb165967.aspx)"
-(i.e., Open, Edit, Print, Play, Preview or custom).
 
 # Possible Todos
 
@@ -164,6 +161,11 @@ is possible with SendTo)
 1. Support tab/shift-tab key for autocomplete as in Windows explorer (per user request)
 1. Ensure launched files (including via AtYourCommand) somehow can get added
 to history instead of only those pages viewable and viewed in the browser.
+1. Allow file:// execute to be done with specific Windows
+"[verbs](http://msdn.microsoft.com/en-us/library/bb165967.aspx)"
+(i.e., Open, Edit, Print, Play, Preview or custom).
+    1. http://ss64.com/vb/shellexecute.html ?
+    1. http://msdn.microsoft.com/en-us/library/windows/desktop/bb762153%28v=vs.85%29.aspx
 1. Utilize
 [js-ctypes](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes)
 to provide option to populate path selection with OS-specific file results
