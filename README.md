@@ -56,6 +56,15 @@ last review should be overcome)
 
 # Possible Todos
 
+1. Rework code to listen for a WebAppFind "list" mode so as to reuse
+same code to expose browsing functionality to any passed directory
+and subdirectories.
+    1. Option in filebrowser-enhanced to check a filetypes.json file
+    (or new file type for directories?) within any browsed directory
+    to designate a web app to handler the "list" type for that directory
+    and optionally by default, subdirectories (e.g., so user could use
+    CSS transforms or JS to show file listing for their favorite books
+    file folder or what not in a special manner).
 1. Column browser / hierarchical folder / large icon browsing
 1. Make application of stylesheet customizable
 1. Figure out way around "pageshow" problem of path input not getting
