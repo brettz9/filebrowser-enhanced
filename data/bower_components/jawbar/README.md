@@ -73,6 +73,12 @@ The `add()` method currently supports (and requires) the following options to be
 
 An array of such objects may also be provided for multiple simultaneous additions.
 
+## Events
+
+If the input has been changed via enter or click, any `selectChanged` method
+attached to the jawbar object will be invoked with the new value as its only
+argument.
+
 # Credits
 
 Original code from http://www.codeproject.com/Articles/27079/JavaScript-Awesome-Bar

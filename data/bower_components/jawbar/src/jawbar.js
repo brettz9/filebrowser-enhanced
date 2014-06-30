@@ -84,7 +84,14 @@ JawBar.prototype._getNextDisplayedItem = function(backwards) {
         return !item.classList.contains('jawbar-menuitem-removed') && !item.classList.contains('jawbar-menuitem-hover');
     }, this) || oldHover;
 };
-
+JawBar.prototype._enterAndSelect = function (elem) {
+    this.hide();
+    var val = this.parent.value = elem.dataset.jawbarDisplayValue;
+    this.parent.select();
+    if (this.selectChanged) {
+        this.selectChanged(val);
+    }
+};
 JawBar.prototype.init = function() {
     var that = this;
 
@@ -142,9 +149,7 @@ JawBar.prototype.init = function() {
                 return;
             case 13: // Enter
                 if (that.prevHover) {
-                    that.parent.value = that.prevHover.dataset.jawbarDisplayValue;
-                    that.parent.select();
-                    that.hide();
+                    that._enterAndSelect(that.prevHover);
                     return;
                 }
                 break;
@@ -220,9 +225,8 @@ JawBar.prototype.add = function(options) {
     item.appendChild(imageDiv);
     item.appendChild(text);
     item.appendChild(subText);
-    item.addEventListener('click', function () {
-        that.parent.value = item.dataset.jawbarDisplayValue;
-        that.parent.select();
+    item.addEventListener('click', function (e) {
+        that._enterAndSelect(item);
     });
     this.html.div.appendChild(item);
     imageDiv.style.height = item.offsetHeight - 10 + 'px';

@@ -117,6 +117,14 @@ l(jbarOpts);
         }
         else {
             jbar = new JawBar('#pathBox', jbarOpts);
+			jbar.selectChanged = function (val) {
+				on('pathExistsResponse', function (pathExists) {
+					if (pathExists) {
+						emit('getFileURLFromNativePath', val);
+					}
+				});
+				emit('pathExists', val);
+			};
         }
     });
     var h1 = $('h1');
@@ -129,14 +137,6 @@ l(jbarOpts);
             type: 'text', id: 'pathBox', autocomplete: 'off', autofocus: 'autofocus',
             size: 95, value: nativePath,
             $on: {
-                change: function (e) {
-                    on('pathExistsResponse', function (pathExists) {
-                        if (pathExists) {
-                            emit('getFileURLFromNativePath', e.target.value);
-                        }
-                    });
-                    emit('pathExists', e.target.value);
-                },
                 input: function (e) {
                     emit('autocompleteValues', {
                         value: e.target.value,

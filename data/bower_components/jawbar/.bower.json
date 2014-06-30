@@ -7,11 +7,11 @@
   ],
   "description": "Vanilla JavaScript implementation of Firefox's \"Awesome Bar\"",
   "license": "MIT",
-  "_release": "be0b71a889",
+  "_release": "0537ab9058",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "be0b71a889d9825eb5dc88ca7fea0f454847b5d2"
+    "commit": "0537ab9058a50fe0a117c9dbc3b454b10769ab97"
   },
   "_source": "git://github.com/brettz9/jawbar.git",
   "_target": "*",
