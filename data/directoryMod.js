@@ -106,7 +106,7 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
             return {
                 text: optValue.title, // + optValue.keyword,
                 subtext: optValue.url, // +tags, +bookmark star if a bookmark (todo: add bookmark group/updated or history visitCount/dateAdded/lastModified via tooltip?)
-                icon: optValue.favicon,
+                icon: optValue.favicon || ('moz-icon://' + optValue.url.slice(optValue.url.lastIndexOf('.')) + '?size=16'),
                 searchValue: (optValue.isDir ? '' : optValue.title + ' ') + optValue.url,
                 displayValue: optValue.url
             };
