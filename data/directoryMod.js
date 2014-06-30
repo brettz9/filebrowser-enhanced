@@ -111,7 +111,6 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
                 displayValue: optValue.url
             };
         });
-l(jbarOpts);
         if (jbar) {
             jbar.remove().add(jbarOpts);
         }
