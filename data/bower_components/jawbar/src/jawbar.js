@@ -14,6 +14,10 @@ function visible_in_container(p, e) {
            !(r.top > z.bottom || r.bottom < z.top ||
              r.left > z.right || r.right < z.left);
 }
+function appendTextOrNode (parent, child) {
+    parent.appendChild(typeof child === 'string' ? document.createTextNode(child) : child);
+}
+
 function JawBar(sel, options) {
     this.parent = typeof sel === 'string' ? document.querySelector(sel) : sel;
     this.init();
@@ -219,8 +223,8 @@ JawBar.prototype.add = function(options) {
     item.dataset.jawbarSearchValue = options.searchValue;
 
     image.src = options.icon;
-    text.appendChild(document.createTextNode(options.text));
-    subText.appendChild(document.createTextNode(options.subtext));
+    appendTextOrNode(text, options.text);
+    appendTextOrNode(subText, options.subtext);
     imageDiv.appendChild(image);
     item.appendChild(imageDiv);
     item.appendChild(text);
