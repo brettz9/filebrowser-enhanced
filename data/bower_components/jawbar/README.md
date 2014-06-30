@@ -9,15 +9,24 @@ good start and I hope more features can be added (see below).
 
 # Installation
 
-1. For the styles (currently non-existent, but I plan to move them from
-out of the JavaScript), add this:
+(Paths below are relative to the root of the repository and should changed as needed.)
+
+1. For the styles, add this:
 ```html
-<link href="styles/demo.css" rel="stylesheet" type="text/css" />
+<link href="/src/styles/jawbar.css" rel="stylesheet" type="text/css" />
 ```
 1. Add this for JavaScript:
 ```html
-<script src="../src/jawbar.js"></script>
+<script src="/src/jawbar.js"></script>
 ```
+
+If you wish to support older browsers, you will need polyfills for:
+- A proper [Array.prototype.slice](https://gist.github.com/brettz9/6093105)
+- `Array.prototype.find`
+- `Array.prototype.forEach`
+- `document.querySelector`
+- `Element.addEventListener`
+- `Element.classList`
 
 <!--
 # Todos
