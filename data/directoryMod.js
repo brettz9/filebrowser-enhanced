@@ -104,8 +104,18 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
         // Convert Set (of tags) to array:  [v for (v of mySet)] // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
         var jbarOpts = data.optValues.map(function (optValue) {
             return {
-                text: optValue.title, // + optValue.keyword,
-                subtext: optValue.url, // +tags, +bookmark star if a bookmark (todo: add bookmark group/updated or history visitCount/dateAdded/lastModified via tooltip?)
+                text: jml('span', [
+                    optValue.title,
+                    (optValue.keyword ? ['img', {alt: "Keyword magnifying glass", src: 'chrome://global/skin/icons/Search-glass.png', style: 'position:absolute; clip: rect(0px, 32px, 16px, 16px);'}] : '')
+                ]),
+                subtext: jml('span', [
+                    optValue.url,
+                    (optValue.tags ? {'#': [
+                        ['img', {alt: "Tag mark", src: 'chrome://browser/skin/places/tag.png'}],
+                        optValue.tags.join(', ')
+                    ]} : ''),
+                    (optValue.isBookmark ? ['img', {alt: "Bookmark star", src: 'chrome://browser/skin/places/bookmark.png', style: 'position:absolute; clip: rect(0px, 32px, 16px, 16px);'}] : '')
+                ]), // (todo: add bookmark group/updated or history visitCount/dateAdded/lastModified via tooltip?)
                 icon: optValue.favicon || ('moz-icon://' + optValue.url.slice(optValue.url.lastIndexOf('.')) + '?size=16'),
                 searchValue: (optValue.isDir ? '' : optValue.title + ' ') + optValue.url,
                 displayValue: optValue.url
@@ -116,14 +126,14 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
         }
         else {
             jbar = new JawBar('#pathBox', jbarOpts);
-			jbar.selectChanged = function (val) {
-				on('pathExistsResponse', function (pathExists) {
-					if (pathExists) {
-						emit('getFileURLFromNativePath', val);
-					}
-				});
-				emit('pathExists', val);
-			};
+            jbar.selectChanged = function (val) {
+                on('pathExistsResponse', function (pathExists) {
+                    if (pathExists) {
+                        emit('getFileURLFromNativePath', val);
+                    }
+                });
+                emit('pathExists', val);
+            };
         }
     });
     var h1 = $('h1');
