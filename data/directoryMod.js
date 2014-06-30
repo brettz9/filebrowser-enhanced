@@ -98,19 +98,26 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
         // Real Awesome Bar includes: icon, title + keyword icon, URL, tags, bookmark star
         /*
         Properties:
-            History: 'title', 'url', 'keyword', // 'date', 'visitCount', 'dateAdded' and 'lastModified
+            History: 'title', 'url', 'keyword', // 'date', 'visitCount', 'dateAdded' and 'lastModified (title, url, time, accessCount)
             Bookmarks: 'title', 'url', 'tags', // 'group', 'index', 'updated'
         */
         // Convert Set (of tags) to array:  [v for (v of mySet)] // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
         var jbarOpts = data.optValues.map(function (optValue) {
             return {
                 text: jml('span', [
-                    optValue.title,
-                    (optValue.keyword ? ['img', {alt: "Keyword magnifying glass", src: 'chrome://global/skin/icons/Search-glass.png', style: 'position:absolute; clip: rect(0px, 32px, 16px, 16px);'}] : '')
+                    optValue.title
+                    /*
+                    // Keywords not available
+                    ,(optValue.keyword ? {'#': [
+                        ' \u00a0',
+                        ['img', {alt: "Keyword magnifying glass", src: 'chrome://global/skin/icons/Search-glass.png', style: 'position:absolute; clip: rect(0px, 32px, 16px, 16px);'}]
+                    ]}: '')
+                    */
                 ]),
                 subtext: jml('span', [
                     optValue.url,
                     (optValue.tags ? {'#': [
+                        ' \u00a0',
                         ['img', {alt: "Tag mark", src: 'chrome://browser/skin/places/tag.png'}],
                         optValue.tags.join(', ')
                     ]} : ''),
