@@ -105,7 +105,7 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
         var jbarOpts = data.optValues.map(function (optValue) {
             return {
                 text: jml('span', [
-                    optValue.title
+                    optValue.title || ''
                     /*
                     // Keywords not available
                     ,(optValue.keyword ? {'#': [
@@ -115,7 +115,7 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
                     */
                 ]),
                 subtext: jml('span', [
-                    optValue.url,
+                    (optValue.url || ''),
                     (optValue.tags ? {'#': [
                         ' \u00a0',
                         ['img', {alt: "Tag mark", src: 'chrome://browser/skin/places/tag.png'}],
@@ -123,7 +123,7 @@ on('getNativePathFromFileURLIfADirectory', function (nativePath) {
                     ]} : ''),
                     (optValue.isBookmark ? ['img', {alt: "Bookmark star", src: 'chrome://browser/skin/places/bookmark.png', style: 'position:absolute; clip: rect(0px, 32px, 16px, 16px);'}] : '')
                 ]), // (todo: add bookmark group/updated or history visitCount/dateAdded/lastModified via tooltip?)
-                icon: optValue.favicon || ('moz-icon://' + optValue.url.slice(optValue.url.lastIndexOf('.')) + '?size=16'),
+                icon: optValue.favicon || optValue.url && ('moz-icon://' + optValue.url.slice(optValue.url.lastIndexOf('.')) + '?size=16'),
                 searchValue: (optValue.isDir ? '' : optValue.title + ' ') + optValue.url,
                 displayValue: optValue.url
             };
