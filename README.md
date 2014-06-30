@@ -180,3 +180,5 @@ to history instead of only those pages viewable and viewed in the browser.
 to provide option to populate path selection with OS-specific file results
 as well as or in place of our own location bar algorithm
 1. Add option to whitelist a particular domain for cross-scheme permission (for now just a global preference).
+1. Case-insensitive searching in our Awesome Bar?
+1. Issue finding tags/bookmarks in our Awesome Bar?
