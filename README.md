@@ -53,6 +53,20 @@ Firefox's file browser.
 # Higher-priority todos
 1. Resubmit to AMO (and note to reviewers that other concerns from
 last review should be overcome)
+1. Provide key command to allow for display of "pinned" "Start menu"
+drag-and-drop customizable apps (as in Windows 8, but for registering
+web apps (or desktop apps?) or at user initiation, including (via WebAppFind?)
+from actual OS desktop right-click invocation using a special mode
+or SendTo for folders).
+1. Provide means for web (or desktop?) apps (or user) to register for a
+"task bar" and optionally display this at the bottom of the screen (do
+as dynamic XUL overlay so as to be visible across any Firefox tab). Also
+include an icon equivalent to "Reveal Desktop" which brings one to a
+(pinned?) tab which shows a one's OS desktop opened in Firefox. Could
+leverage Firefox's pinned app functionality (with the option for pinning
+to be initiated (via WebAppFind), from the desktop), but change so
+that the pinned tabs are more visible (and then one could hide
+one's OS task bar if all functionality can be replicated).
 
 # Possible Todos
 
