@@ -1,7 +1,8 @@
 {
     "fullName": "filebrowser-enhanced",
     "name": "filebrowser-enhanced",
-    "id": "jid0-eM18CfXeYaui2LfzOiTY9Rtdxs8",
+    "id": "jid0-eM18CfXeYaui2LfzOiTY9Rtdxs8@jetpack",
+    "main": "lib/main",
     "version": "0.5.2",
     "description": "Overlays Firefox's built-in desktop browser with additional functionality",
     "author": "Brett Zamir",
