@@ -1,0 +1,8 @@
+.git
+.gitignore
+.jpmignore
+.bowerrc
+*.xpi
+*.lnk
+**/.bower.json
+**/bower.json
