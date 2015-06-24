@@ -1,7 +1,5 @@
-# 0.6.1
-- jpm packaging
-
 # 0.6.0
+- jpm packaging
 - Feature: Awesome Bar imitation for file:// URLs (using https://github.com/brettz9/jawbar fork) for a richer display and decoupling of user input, data, and display text.
 - Feature: Ctrl-shift-L (or command-shift-L) to highlight pathBox contents
 - Feature: Add icon for copy-path and create separate icon for copy (parent) directory path
