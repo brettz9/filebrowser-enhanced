@@ -1,3 +1,6 @@
+# 0.7.0
+- Add support for private window browsing
+
 # 0.6.0
 - jpm packaging
 - Feature: Awesome Bar imitation for file:// URLs (using https://github.com/brettz9/jawbar fork) for a richer display and decoupling of user input, data, and display text.

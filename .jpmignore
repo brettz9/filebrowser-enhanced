@@ -4,5 +4,6 @@
 .bowerrc
 *.xpi
 *.lnk
+*.bat
 **/.bower.json
 **/bower.json

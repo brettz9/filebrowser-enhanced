@@ -3,7 +3,7 @@
     "name": "filebrowser-enhanced",
     "id": "jid0-eM18CfXeYaui2LfzOiTY9Rtdxs8@jetpack",
     "main": "lib/main",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "description": "Overlays Firefox's built-in desktop browser with additional functionality",
     "author": "Brett Zamir",
     "license": "MIT",
@@ -15,6 +15,7 @@
     "scripts": {
         "prepublish": "bower install jawbar && rd /s /q \"data\\bower_components\\jawbar\\demos\""
     },
+    "permissions": {"private-browsing": true},
     "preferences": [
         {
             "name": "conserveSpace",
