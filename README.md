@@ -1,5 +1,7 @@
 # filebrowser-enhanced
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brettz9/filebrowser-enhanced.svg)](https://greenkeeper.io/)
+
 [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/filebrowser-enhanced/)
 to overlay Firefox's built-in desktop browser with additional functionality.
 
