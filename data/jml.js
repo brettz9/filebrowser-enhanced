@@ -218,7 +218,7 @@ Todos:
                                 procValue = [];
                                 for (p in val) {
                                     if (val.hasOwnProperty(p)) {
-                                        procValue.push(p + '=' + '"' + val[p].replace(/"/g, '\\"') + '"');
+                                        procValue.push(p + '=' + '"' + val[p].replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"');
                                     }
                                 }
                                 procValue = procValue.join(' ');
