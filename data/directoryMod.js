@@ -3,10 +3,13 @@
 (function () {
     'use strict';
 
+/*
 function l(msg) {
     console.log(msg);
 }
-function $ (sel) {
+*/
+
+    function $ (sel) {
     return document.querySelector(sel);
 }
 
